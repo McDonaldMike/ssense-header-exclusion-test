@@ -1,6 +1,5 @@
 import { useState } from "react";
 import imgSkus from "./images.js";
-import Logo from "./assets/ssense_logo_v2.svg?react";
 import HeaderLayer from "./HeaderLayer.js";
 
 import "./App.scss";

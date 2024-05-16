@@ -1,5 +1,3 @@
-import { useState } from "react";
-import imgSkus from "./images.js";
 import Logo from "./assets/ssense_logo_v2.svg?react";
 
 import "./App.scss";
