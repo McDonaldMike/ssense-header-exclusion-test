@@ -1,0 +1,146 @@
+@font-face {
+  font-family: "Favorit SSENSE Inter";
+  src: url("//res.cloudinary.com/ssenseweb/raw/upload/v1504879826/web/fonts/favorit-times/FavoritSSENSE-Inter.eot");
+  src: url("//res.cloudinary.com/ssenseweb/raw/upload/v1504879826/web/fonts/favorit-times/FavoritSSENSE-Inter.eot?#iefix")
+      format("embedded-opentype"),
+    url("//res.cloudinary.com/ssenseweb/raw/upload/v1504879826/web/fonts/favorit-times/FavoritSSENSE-Inter.woff2")
+      format("woff2"),
+    url("//res.cloudinary.com/ssenseweb/raw/upload/v1504879826/web/fonts/favorit-times/FavoritSSENSE-Inter.woff")
+      format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Favorit SSENSE Regular";
+  src: url("//res.cloudinary.com/ssenseweb/raw/upload/v1504879826/web/fonts/favorit-times/FavoritSSENSE-Regular.eot");
+  src: url("//res.cloudinary.com/ssenseweb/raw/upload/v1504879826/web/fonts/favorit-times/FavoritSSENSE-Regular.eot?#iefix")
+      format("embedded-opentype"),
+    url("//res.cloudinary.com/ssenseweb/raw/upload/v1504879826/web/fonts/favorit-times/FavoritSSENSE-Regular.woff2")
+      format("woff2"),
+    url("//res.cloudinary.com/ssenseweb/raw/upload/v1504879826/web/fonts/favorit-times/FavoritSSENSE-Regular.woff")
+      format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+body {
+  font-family: "Favorit SSENSE Inter";
+  font-size: 11px;
+  font-weight: 500;
+  text-rendering: optimizeLegibility;
+  line-height: 15px;
+  background-color: #fff;
+  overflow-x: hidden;
+}
+
+.header {
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+}
+
+img {
+  width: 100%;
+  mix-blend-mode: multiply;
+  filter: brightness(1.02);
+}
+
+.image-container {
+  display: inline-block;
+  position: relative;
+  margin: 5px;
+}
+.big-logo {
+  width: 95vw;
+  position: absolute;
+  transform: translate(2%, 80%);
+  filter: url(#blur);
+  font-size: 340px;
+}
+
+.new-filter {
+  position: absolute;
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(250, 250, 250);
+}
+
+.logo-row {
+  position: fixed;
+  transform: translate(2.5%, 100%);
+  display: flex;
+}
+
+.logo {
+  width: 8vw;
+  margin-right: 1.5vw;
+}
+
+.header-row {
+  display: flex;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.header-middle {
+  display: flex;
+  justify-content: space-around;
+  width: 40%;
+  justify-self: center;
+  margin: 0 auto;
+  padding-right: 5%;
+}
+
+.header-left {
+  position: absolute;
+  display: flex;
+  justify-content: space-around;
+  width: 10%;
+  left: 0;
+}
+
+.header-right {
+  position: absolute;
+  display: flex;
+  justify-content: space-around;
+  width: 20%;
+  right: 0;
+}
+
+.main {
+  padding-top: 100px;
+}
+
+.section-title {
+  text-transform: uppercase;
+  margin-top: 40px;
+  margin-left: 1.5%;
+}
+
+.options {
+  padding: 5px;
+  position: fixed;
+  display: flex;
+  margin: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgb(230, 230, 230);
+  font-size: 14px;
+  font-weight: bold;
+  z-index: 999;
+
+  input {
+    width: 50px;
+  }
+
+  label {
+    margin: 10px;
+    margin-left: 5px;
+    margin-right: 35px;
+  }
+}
