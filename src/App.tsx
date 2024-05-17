@@ -114,6 +114,12 @@ function App() {
         z="1"
         opacity={`${integerToDecimal(softLight)}`}
       />
+      <HeaderLayer
+        blendMode="soft-light"
+        filter="unset"
+        z="1"
+        opacity={`${integerToDecimal(softLight)}`}
+      />
 
       <div className="main">
         {Object.keys(imgSkus).map((section: string) => {
