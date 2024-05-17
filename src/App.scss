@@ -53,12 +53,13 @@ img {
   position: relative;
   margin: 5px;
 }
+
 .big-logo {
   width: 95vw;
   position: absolute;
-  transform: translate(2%, 80%);
-  filter: url(#blur);
-  font-size: 340px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .new-filter {
