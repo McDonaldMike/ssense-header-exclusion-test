@@ -7,7 +7,7 @@ import "./App.scss";
 
 function App() {
   const [brightness, setBrightness] = useState(0);
-  const [blackAndWhite, setBlackAndWhite] = useState(0);
+  const [blackAndWhite, setBlackAndWhite] = useState(100);
   const [overlay, setOverlay] = useState(0);
   const [overlayInvert, setOverlayInvert] = useState(0);
   const [softLight, setSoftLight] = useState(0);
@@ -93,7 +93,7 @@ function App() {
         blendMode="hue"
         z="9"
         filter="unset"
-        opacity={`${integerToDecimal(blackAndWhite)}`}
+        opacity={`${integerToDecimal(100 - blackAndWhite)}`}
       />
 
       <HeaderLayer
