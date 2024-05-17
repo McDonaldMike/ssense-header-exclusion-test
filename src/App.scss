@@ -44,7 +44,7 @@ body {
 
 img {
   width: 100%;
-  mix-blend-mode: multiply;
+
   filter: brightness(1.02);
 }
 
@@ -63,7 +63,8 @@ img {
 
 .new-filter {
   position: absolute;
-  z-index: 0;
+  mix-blend-mode: multiply;
+  z-index: 1;
   width: 100%;
   height: 100%;
   background-color: rgb(250, 250, 250);
