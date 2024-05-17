@@ -108,19 +108,6 @@ function App() {
         z="5"
         opacity={`${integerToDecimal(overlayInvert)}`}
       />
-
-      <HeaderLayer
-        blendMode="overlay"
-        z="4"
-        filter="unset"
-        opacity={`${integerToDecimal(overlay)}`}
-      />
-
-      <HeaderLayer
-        blendMode="overlay"
-        z="5"
-        opacity={`${integerToDecimal(overlayInvert)}`}
-      />
       <HeaderLayer
         blendMode="soft-light"
         filter="unset"
