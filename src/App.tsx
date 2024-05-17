@@ -1,6 +1,7 @@
 import { useState } from "react";
 import imgSkus from "./images.js";
 import HeaderLayer from "./HeaderLayer.js";
+import { integerToDecimal } from "./utils.js";
 
 import "./App.scss";
 
@@ -16,8 +17,7 @@ function App() {
         <input
           type="number"
           min="0"
-          max="1"
-          step=".01"
+          max="100"
           onChange={(e) => setSoftLight(+e.target.value)}
           value={softLight}
         />
@@ -26,8 +26,7 @@ function App() {
         <input
           type="number"
           min="0"
-          max="1"
-          step=".01"
+          max="100"
           onChange={(e) => setBrightness(+e.target.value)}
           value={brightness}
         />
@@ -36,8 +35,7 @@ function App() {
         <input
           type="number"
           min="0"
-          max="1"
-          step=".01"
+          max="100"
           onChange={(e) => setBlackAndWhite(+e.target.value)}
           value={blackAndWhite}
         />
@@ -46,8 +44,7 @@ function App() {
         <input
           type="number"
           min="0"
-          max="1"
-          step=".01"
+          max="100"
           onChange={(e) => {
             setOverlay(+e.target.value);
           }}
@@ -58,8 +55,7 @@ function App() {
         <input
           type="number"
           min="0"
-          max="1"
-          step=".01"
+          max="100"
           onChange={(e) => {
             setOverlayInvert(+e.target.value);
           }}
@@ -84,7 +80,7 @@ function App() {
       <HeaderLayer
         blendMode="unset"
         z="10"
-        opacity={`${brightness}`}
+        opacity={`${integerToDecimal(brightness)}`}
         filter="unset"
       />
 
@@ -92,22 +88,26 @@ function App() {
         blendMode="hue"
         z="9"
         filter="unset"
-        opacity={`${blackAndWhite}`}
+        opacity={`${integerToDecimal(blackAndWhite)}`}
       />
 
       <HeaderLayer
         blendMode="overlay"
         z="4"
         filter="unset"
-        opacity={`${overlay}`}
+        opacity={`${integerToDecimal(overlay)}`}
       />
 
-      <HeaderLayer blendMode="overlay" z="4" opacity={`${overlayInvert}`} />
+      <HeaderLayer
+        blendMode="overlay"
+        z="4"
+        opacity={`${integerToDecimal(overlayInvert)}`}
+      />
       <HeaderLayer
         blendMode="soft-light"
         filter="unset"
         z="1"
-        opacity={`${softLight}`}
+        opacity={`${integerToDecimal(softLight)}`}
       />
 
       <div className="main">
