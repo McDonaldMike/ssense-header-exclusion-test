@@ -29,18 +29,62 @@ function HeaderLayer({ blendMode, z, filter = "invert(1)", opacity = "1" }) {
         </div>
       </div>
       <div className="logo-row">
-        <Logo className="logo" />
-        <Logo className="logo" />
-        <Logo className="logo" />
-        <Logo className="logo" />
-        <Logo className="logo" />
-        <Logo className="logo" />
-        <Logo className="logo" />
-        <Logo className="logo" />
-        <Logo className="logo" />
-        <Logo className="logo" />
+        <img
+          src="//res.cloudinary.com/ssenseweb/image/upload/v1471963917/web/ssense_logo_v2.svg"
+          alt="SSENSE"
+          className="logo"
+        />
+        <img
+          src="//res.cloudinary.com/ssenseweb/image/upload/v1471963917/web/ssense_logo_v2.svg"
+          alt="SSENSE"
+          className="logo"
+        />
+        <img
+          src="//res.cloudinary.com/ssenseweb/image/upload/v1471963917/web/ssense_logo_v2.svg"
+          alt="SSENSE"
+          className="logo"
+        />
+        <img
+          src="//res.cloudinary.com/ssenseweb/image/upload/v1471963917/web/ssense_logo_v2.svg"
+          alt="SSENSE"
+          className="logo"
+        />
+        <img
+          src="//res.cloudinary.com/ssenseweb/image/upload/v1471963917/web/ssense_logo_v2.svg"
+          alt="SSENSE"
+          className="logo"
+        />
+        <img
+          src="//res.cloudinary.com/ssenseweb/image/upload/v1471963917/web/ssense_logo_v2.svg"
+          alt="SSENSE"
+          className="logo"
+        />
+        <img
+          src="//res.cloudinary.com/ssenseweb/image/upload/v1471963917/web/ssense_logo_v2.svg"
+          alt="SSENSE"
+          className="logo"
+        />
+        <img
+          src="//res.cloudinary.com/ssenseweb/image/upload/v1471963917/web/ssense_logo_v2.svg"
+          alt="SSENSE"
+          className="logo"
+        />
+        <img
+          src="//res.cloudinary.com/ssenseweb/image/upload/v1471963917/web/ssense_logo_v2.svg"
+          alt="SSENSE"
+          className="logo"
+        />
+        <img
+          src="//res.cloudinary.com/ssenseweb/image/upload/v1471963917/web/ssense_logo_v2.svg"
+          alt="SSENSE"
+          className="logo"
+        />
       </div>
-      <Logo className="big-logo" />
+      <img
+        src="//res.cloudinary.com/ssenseweb/image/upload/v1471963917/web/ssense_logo_v2.svg"
+        alt="SSENSE"
+        className="big-logo"
+      />
     </div>
   );
 }
