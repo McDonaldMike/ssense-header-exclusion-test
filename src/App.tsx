@@ -71,7 +71,7 @@ function App() {
         <button
           onClick={(e) => {
             e.preventDefault();
-            setBlackAndWhite(0);
+            setBlackAndWhite(100);
             setSoftLight(0);
             setBrightness(0);
             setOverlay(0);
