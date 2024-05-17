@@ -62,7 +62,11 @@ function App() {
           value={overlayInvert}
         />
         <label>"Overlay" (invert)</label>
-
+        <button
+          style={{ opacity: 0 }}
+          onClick={(e) => e.preventDefault()}
+          onSubmit={(e) => e.preventDefault()}
+        ></button>
         <button
           onClick={(e) => {
             e.preventDefault();
