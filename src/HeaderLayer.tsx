@@ -1,5 +1,3 @@
-import Logo from "./assets/ssense_logo_v2.svg?react";
-
 import "./App.scss";
 
 function HeaderLayer({ blendMode, z, filter = "invert(1)", opacity = "1" }) {

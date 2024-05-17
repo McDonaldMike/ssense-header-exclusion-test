@@ -134,12 +134,16 @@ img {
   font-weight: bold;
   z-index: 999;
 
-  input {
+  p {
     width: 50px;
+    margin-left: -30px;
+  }
+  input {
+    width: 150px;
   }
 
   label {
-    margin: 10px;
+    margin-top: 13px;
     margin-left: 5px;
     margin-right: 35px;
   }

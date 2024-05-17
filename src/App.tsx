@@ -15,34 +15,34 @@ function App() {
     <div>
       <form className="options">
         <input
-          type="number"
+          type="range"
           min="0"
           max="100"
           onChange={(e) => setSoftLight(+e.target.value)}
           value={softLight}
         />
         <label>Brighten</label>
-
+        <p>{softLight}</p>
         <input
-          type="number"
+          type="range"
           min="0"
           max="100"
           onChange={(e) => setBrightness(+e.target.value)}
           value={brightness}
         />
         <label>Darken</label>
-
+        <p>{brightness}</p>
         <input
-          type="number"
+          type="range"
           min="0"
           max="100"
           onChange={(e) => setBlackAndWhite(+e.target.value)}
           value={blackAndWhite}
         />
         <label>Saturation</label>
-
+        <p>{blackAndWhite}</p>
         <input
-          type="number"
+          type="range"
           min="0"
           max="100"
           onChange={(e) => {
@@ -51,9 +51,9 @@ function App() {
           value={overlay}
         />
         <label>"Overlay"</label>
-
+        <p>{overlay}</p>
         <input
-          type="number"
+          type="range"
           min="0"
           max="100"
           onChange={(e) => {
@@ -62,6 +62,7 @@ function App() {
           value={overlayInvert}
         />
         <label>"Overlay" (invert)</label>
+        <p>{overlayInvert}</p>
         <button
           style={{ opacity: 0 }}
           onClick={(e) => e.preventDefault()}
