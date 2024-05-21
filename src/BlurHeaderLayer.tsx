@@ -1,10 +1,32 @@
 import "./App.scss";
+import { useState, useEffect } from "react";
 
-function HeaderLayer({ blendMode, z, filter = "invert(1)", opacity = "1", mask = undefined, navRef = undefined }) {
+function BlurHeaderLayer({ blur, navRef }) {
+  const [height, setHeight] = useState(0);
+  const [width, setWidth] = useState(0);
+
+  useEffect(() => {
+    console.log(navRef);
+    if (navRef.current) {
+      setHeight(navRef.current.clientHeight);
+      setWidth(navRef.current.clientWidth);
+    }
+  }, [setHeight, setWidth, navRef]);
+
   return (
     <div
       className="header"
-      style={{ mixBlendMode: blendMode, zIndex: z, filter, opacity, mask: mask ? mask : undefined }}
+      style={{
+        background: "inherit",
+        zIndex: 1,
+        opacity: 0.9,
+        backdropFilter: blur,
+        mixBlendMode: "exclusion",
+        mask: "url(//res.cloudinary.com/ssenseweb/image/upload/v1471963917/web/ssense_logo_v2.svg)",
+        maskRepeat: "no-repeat",
+        maskSize: "95vw",
+        maskPosition: "center",
+      }}
     >
       <div className="header-row">
         <div className="header-left">
@@ -79,7 +101,6 @@ function HeaderLayer({ blendMode, z, filter = "invert(1)", opacity = "1", mask =
         />
       </div>
       <img
-        ref={navRef}
         src="//res.cloudinary.com/ssenseweb/image/upload/v1471963917/web/ssense_logo_v2.svg"
         alt="SSENSE"
         className="big-logo"
@@ -87,4 +108,4 @@ function HeaderLayer({ blendMode, z, filter = "invert(1)", opacity = "1", mask =
     </div>
   );
 }
-export default HeaderLayer;
+export default BlurHeaderLayer;

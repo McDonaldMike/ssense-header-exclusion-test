@@ -1,9 +1,10 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import imgSkus from "./images.js";
 import HeaderLayer from "./HeaderLayer.js";
 import { integerToDecimal } from "./utils.js";
 
 import "./App.scss";
+import BlurHeaderLayer from "./BlurHeaderLayer.js";
 
 function App() {
   const [brightness, setBrightness] = useState(0);
@@ -11,6 +12,9 @@ function App() {
   const [overlay, setOverlay] = useState(0);
   const [overlayInvert, setOverlayInvert] = useState(0);
   const [softLight, setSoftLight] = useState(0);
+  const [blur, setblur] = useState(0);
+  const navRef = useRef();
+
   return (
     <div>
       <form className="options">
@@ -23,6 +27,17 @@ function App() {
         />
         <label>Brighten</label>
         <p>{softLight}</p>
+
+        <input
+          type="range"
+          min="0"
+          max="20"
+          onChange={(e) => setblur(+e.target.value)}
+          value={blur}
+        />
+        <label>Blur</label>
+        <p>{blur}</p>
+
         <input
           type="range"
           min="0"
@@ -32,6 +47,7 @@ function App() {
         />
         <label>Darken</label>
         <p>{brightness}</p>
+
         <input
           type="range"
           min="0"
@@ -41,6 +57,7 @@ function App() {
         />
         <label>Saturation</label>
         <p>{blackAndWhite}</p>
+
         <input
           type="range"
           min="0"
@@ -52,6 +69,7 @@ function App() {
         />
         <label>"Overlay"</label>
         <p>{overlay}</p>
+
         <input
           type="range"
           min="0"
@@ -63,6 +81,7 @@ function App() {
         />
         <label>"Overlay" (invert)</label>
         <p>{overlayInvert}</p>
+
         <button
           style={{ opacity: 0 }}
           onClick={(e) => e.preventDefault()}
@@ -81,28 +100,25 @@ function App() {
           Reset
         </button>
       </form>
-      <HeaderLayer blendMode="exclusion" z="3" />
+      <HeaderLayer blendMode="exclusion" z="3" navRef={navRef} />
       <HeaderLayer
         blendMode="unset"
         z="10"
         opacity={`${integerToDecimal(brightness)}`}
         filter="unset"
       />
-
       <HeaderLayer
         blendMode="hue"
         z="9"
         filter="unset"
         opacity={`${integerToDecimal(100 - blackAndWhite)}`}
       />
-
       <HeaderLayer
         blendMode="overlay"
         z="4"
         filter="unset"
         opacity={`${integerToDecimal(overlay)}`}
       />
-
       <HeaderLayer
         blendMode="overlay"
         z="5"
@@ -114,6 +130,7 @@ function App() {
         z="1"
         opacity={`${integerToDecimal(softLight)}`}
       />
+      <BlurHeaderLayer blur={`blur(${blur}px)`} navRef={navRef} />
       <HeaderLayer
         blendMode="soft-light"
         filter="unset"
