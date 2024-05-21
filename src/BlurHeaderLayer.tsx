@@ -1,12 +1,12 @@
 import "./App.scss";
-import { useState, useEffect } from 'react'
+import { useState, useEffect } from "react";
 
 function BlurHeaderLayer({ blur, navRef }) {
   const [height, setHeight] = useState(0);
   const [width, setWidth] = useState(0);
 
   useEffect(() => {
-    console.log(navRef)
+    console.log(navRef);
     if (navRef.current) {
       setHeight(navRef.current.clientHeight);
       setWidth(navRef.current.clientWidth);
@@ -18,13 +18,14 @@ function BlurHeaderLayer({ blur, navRef }) {
       className="header"
       style={{
         background: "inherit",
-        height,
-        width,
         zIndex: 1,
         opacity: 0.9,
         backdropFilter: blur,
         mixBlendMode: "exclusion",
         mask: "url(//res.cloudinary.com/ssenseweb/image/upload/v1471963917/web/ssense_logo_v2.svg)",
+        maskRepeat: "no-repeat",
+        maskSize: "95vw",
+        maskPosition: "center",
       }}
     >
       <div className="header-row">
@@ -108,4 +109,3 @@ function BlurHeaderLayer({ blur, navRef }) {
   );
 }
 export default BlurHeaderLayer;
-
