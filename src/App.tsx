@@ -11,78 +11,143 @@ function App() {
   const [overlay, setOverlay] = useState(0);
   const [overlayInvert, setOverlayInvert] = useState(0);
   const [softLight, setSoftLight] = useState(0);
+  const [bigLogoToggle, setbigLogoToggle] = useState(true);
+
   return (
     <div>
       <form className="options">
-        <input
-          type="range"
-          min="0"
-          max="100"
-          onChange={(e) => setSoftLight(+e.target.value)}
-          value={softLight}
-        />
-        <label>Brighten</label>
-        <p>{softLight}</p>
-        <input
-          type="range"
-          min="0"
-          max="100"
-          onChange={(e) => setBrightness(+e.target.value)}
-          value={brightness}
-        />
-        <label>Darken</label>
-        <p>{brightness}</p>
-        <input
-          type="range"
-          min="0"
-          max="100"
-          onChange={(e) => setBlackAndWhite(+e.target.value)}
-          value={blackAndWhite}
-        />
-        <label>Saturation</label>
-        <p>{blackAndWhite}</p>
-        <input
-          type="range"
-          min="0"
-          max="100"
-          onChange={(e) => {
-            setOverlay(+e.target.value);
-          }}
-          value={overlay}
-        />
-        <label>"Overlay"</label>
-        <p>{overlay}</p>
-        <input
-          type="range"
-          min="0"
-          max="100"
-          onChange={(e) => {
-            setOverlayInvert(+e.target.value);
-          }}
-          value={overlayInvert}
-        />
-        <label>"Overlay" (invert)</label>
-        <p>{overlayInvert}</p>
-        <button
-          style={{ opacity: 0 }}
-          onClick={(e) => e.preventDefault()}
-          onSubmit={(e) => e.preventDefault()}
-        ></button>
-        <button
-          onClick={(e) => {
-            e.preventDefault();
-            setBlackAndWhite(100);
-            setSoftLight(0);
-            setBrightness(0);
-            setOverlay(0);
-            setOverlayInvert(0);
-          }}
-        >
-          Reset
-        </button>
+        <div>
+          <label>Brighten</label>
+          <input
+            type="range"
+            min="0"
+            max="100"
+            onChange={(e) => setSoftLight(+e.target.value)}
+            value={softLight}
+          />
+          <input
+            className="number-input"
+            type="number"
+            min="0"
+            max="100"
+            onChange={(e) => setSoftLight(+e.target.value)}
+            value={softLight}
+          />
+        </div>
+        <div>
+          <label>Darken</label>
+          <input
+            type="range"
+            min="0"
+            max="100"
+            onChange={(e) => setBrightness(+e.target.value)}
+            value={brightness}
+          />
+          <input
+            className="number-input"
+            type="number"
+            min="0"
+            max="100"
+            onChange={(e) => setBrightness(+e.target.value)}
+            value={brightness}
+          />
+        </div>
+        <div>
+          <label>Saturation</label>
+          <input
+            type="range"
+            min="0"
+            max="100"
+            onChange={(e) => setBlackAndWhite(+e.target.value)}
+            value={blackAndWhite}
+          />
+
+          <input
+            className="number-input"
+            type="number"
+            min="0"
+            max="100"
+            onChange={(e) => setBlackAndWhite(+e.target.value)}
+            value={blackAndWhite}
+          />
+        </div>
+        <div>
+          <label>"Overlay"</label>
+          <input
+            type="range"
+            min="0"
+            max="100"
+            onChange={(e) => {
+              setOverlay(+e.target.value);
+            }}
+            value={overlay}
+          />
+
+          <input
+            className="number-input"
+            type="number"
+            min="0"
+            max="100"
+            onChange={(e) => {
+              setOverlay(+e.target.value);
+            }}
+            value={overlay}
+          />
+        </div>
+        <div>
+          <label>"Overlay" (invert)</label>
+          <input
+            type="range"
+            min="0"
+            max="100"
+            onChange={(e) => {
+              setOverlayInvert(+e.target.value);
+            }}
+            value={overlayInvert}
+          />
+
+          <input
+            className="number-input"
+            type="number"
+            min="0"
+            max="100"
+            onChange={(e) => {
+              setOverlayInvert(+e.target.value);
+            }}
+            value={overlayInvert}
+          />
+        </div>
+        <div>
+          <button
+            style={{ opacity: 0 }}
+            onClick={(e) => e.preventDefault()}
+            onSubmit={(e) => e.preventDefault()}
+          ></button>
+          <button
+            onClick={(e) => {
+              e.preventDefault();
+              setBlackAndWhite(100);
+              setSoftLight(0);
+              setBrightness(0);
+              setOverlay(0);
+              setOverlayInvert(0);
+            }}
+          >
+            Reset
+          </button>
+          <button
+            onClick={(e) => {
+              e.preventDefault();
+              setbigLogoToggle(!bigLogoToggle);
+            }}
+          >
+            Toggle Big Logo
+          </button>
+        </div>
       </form>
-      <HeaderLayer blendMode="exclusion" z="3" />
+      <HeaderLayer bigLogoToggle={bigLogoToggle} blendMode="exclusion" z="3" />
       <HeaderLayer
+        bigLogoToggle={bigLogoToggle}
         blendMode="unset"
         z="10"
         opacity={`${integerToDecimal(brightness)}`}
@@ -90,6 +155,7 @@ function App() {
       />
 
       <HeaderLayer
+        bigLogoToggle={bigLogoToggle}
         blendMode="hue"
         z="9"
         filter="unset"
@@ -97,6 +163,7 @@ function App() {
       />
 
       <HeaderLayer
+        bigLogoToggle={bigLogoToggle}
         blendMode="overlay"
         z="4"
         filter="unset"
@@ -104,17 +171,20 @@ function App() {
       />
 
       <HeaderLayer
+        bigLogoToggle={bigLogoToggle}
         blendMode="overlay"
         z="5"
         opacity={`${integerToDecimal(overlayInvert)}`}
       />
       <HeaderLayer
+        bigLogoToggle={bigLogoToggle}
         blendMode="soft-light"
         filter="unset"
         z="1"
         opacity={`${integerToDecimal(softLight)}`}
       />
       <HeaderLayer
+        bigLogoToggle={bigLogoToggle}
         blendMode="soft-light"
         filter="unset"
         z="1"

@@ -1,6 +1,12 @@
 import "./App.scss";
 
-function HeaderLayer({ blendMode, z, filter = "invert(1)", opacity = "1" }) {
+function HeaderLayer({
+  blendMode,
+  z,
+  filter = "invert(1)",
+  opacity = "1",
+  bigLogoToggle,
+}) {
   return (
     <div
       className="header"
@@ -78,11 +84,13 @@ function HeaderLayer({ blendMode, z, filter = "invert(1)", opacity = "1" }) {
           className="logo"
         />
       </div>
-      <img
-        src="//res.cloudinary.com/ssenseweb/image/upload/v1471963917/web/ssense_logo_v2.svg"
-        alt="SSENSE"
-        className="big-logo"
-      />
+      {bigLogoToggle && (
+        <img
+          src="//res.cloudinary.com/ssenseweb/image/upload/v1471963917/web/ssense_logo_v2.svg"
+          alt="SSENSE"
+          className="big-logo"
+        />
+      )}
     </div>
   );
 }
